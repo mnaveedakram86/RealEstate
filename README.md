@@ -9,8 +9,8 @@ Built with **.NET Core (Backend)** and **React + Material UI (Frontend)**.
 
 Before running the project, make sure you have installed:
 
-- **Node.js** (v23 or higher) – [Download](https://nodejs.org/en/download/)
-- **.NET 8 SDK** (or the version your backend uses) – [Download](https://dotnet.microsoft.com/en-us/download)
+- **Node.js** (v18 or higher) – [Download](https://nodejs.org/en/download/)
+- **.NET 8 SDK** – [Download](https://dotnet.microsoft.com/en-us/download)
 - **SQL Server** (LocalDB or full SQL Server instance)
 - **Git** – [Download](https://git-scm.com/)
 
@@ -18,7 +18,7 @@ Before running the project, make sure you have installed:
 
 ## ⚙ Backend Setup (.NET API)
 
-1. **Navigate to Backend folder**
+1. **Navigate to the backend folder**
    ```bash
    cd backend
    ```
@@ -28,7 +28,7 @@ Before running the project, make sure you have installed:
    dotnet restore
    ```
 
-3. **Update database connection string**  
+3. **Update database connection string**
    - Open `appsettings.json`
    - Update the `ConnectionStrings:DefaultConnection` with your SQL Server connection string.
 
@@ -48,9 +48,9 @@ Before running the project, make sure you have installed:
 
 ---
 
-## 🎨 Frontend Setup (React App)
+## 🎨 Frontend Setup (React + Vite)
 
-1. **Navigate to Frontend folder**
+1. **Navigate to the frontend folder**
    ```bash
    cd frontend
    ```
@@ -59,10 +59,10 @@ Before running the project, make sure you have installed:
    ```bash
    npm install
    ```
-  
+
 3. **Run the frontend**
    ```bash
-   npm start
+   npm run dev
    ```
    The React app will be available at:
    ```
@@ -70,13 +70,17 @@ Before running the project, make sure you have installed:
    ```
 
 ---
-## Notes
-- The default API base URL is set to: `https://localhost:7128`
-- The frontend URL is set to: `https://localhost:5173`
-- If you change these URLs, make sure to update the CORS policy in your `Program.cs` in the backend and Update API base URL Frontend
+
+## 🌐 API & CORS Configuration
+
+- Default API base URL: `https://localhost:7128`
+- Default frontend URL: `https://localhost:5173`
+
+If you change these URLs:
+- Update **CORS policy** in `Program.cs` (backend)
+- Update **API base URL** in `src/Js/constants.js` (frontend)
 
 Example CORS configuration in `Program.cs`:
-
 ```csharp
 builder.Services.AddCors(options =>
 {
@@ -91,16 +95,20 @@ builder.Services.AddCors(options =>
 });
 
 app.UseCors("AllowFrontend");
+```
 
-- Open `src/Js/constants.js`
-- Set `API_BASE_URL` to your backend URL (e.g., `https://localhost:7128/api`).
+In `src/Js/constants.js`:
+```javascript
+export const API_BASE_URL = "https://localhost:7128/api";
+```
+
 ---
 
 ## 🔐 Authentication Notes
 
 - Uses **JWT authentication** with HttpOnly cookies for access and refresh tokens.
-- User must register/login before accessing protected routes like Favorites.
-- Token auto-refresh logic is implemented in Axios interceptors.
+- User must register/login before accessing protected routes like **Favorites**.
+- Token auto-refresh logic is implemented in **Axios interceptors**.
 
 ---
 
@@ -113,17 +121,18 @@ app.UseCors("AllowFrontend");
 - JWT Authentication
 
 **Frontend:**
-- React (CRA)
+- React (Vite)
 - Material UI
 - Axios
 - React Router
-- Context
+- Context API
+
 ---
 
 ## 🚀 Features
 
 - Search properties by filters
-- View property details
+- View detailed property pages
 - Save favorites (auth required)
 - JWT authentication with refresh tokens
 - Responsive UI
@@ -142,5 +151,3 @@ app.UseCors("AllowFrontend");
 ## 📄 License
 
 This project is licensed under the MIT License.
-
-
