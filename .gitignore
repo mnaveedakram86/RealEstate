@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/backend/RealEstate/RealEstate.Api/bin/Debug/net8.0
+/backend/RealEstate/RealEstate.Api/obj
+/backend/RealEstate/RealEstate.Core/bin/Debug/net8.0
+/backend/RealEstate/RealEstate.Core/obj
+/backend/RealEstate/RealEstate.Infrastructure/bin/Debug/net8.0
+/backend/RealEstate/RealEstate.Infrastructure/obj
+/backend/RealEstate/RealEstate.Services/bin/Debug/net8.0
+/backend/RealEstate/RealEstate.Services/obj
