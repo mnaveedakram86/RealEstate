@@ -94,6 +94,7 @@ app.UseCors("AllowFrontend");
 
 - Open `src/Js/constants.js`
 - Set `API_BASE_URL` to your backend URL (e.g., `https://localhost:7128/api`).
+---
 
 ## 🔐 Authentication Notes
 
