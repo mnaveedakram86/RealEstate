@@ -11,3 +11,5 @@
 /backend/RealEstate/RealEstate.Services/bin/Debug/net8.0
 /backend/RealEstate/RealEstate.Services/obj
 /frontend/package-lock.json
+/frontend/node_modules
+/.vs
